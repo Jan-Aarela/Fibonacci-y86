@@ -1,0 +1,64 @@
+# https://boginw.github.io/js-y86-64/
+
+.pos 0
+irmovq 0x800,%rbp
+irmovq 0x800,%rsp
+irmovq $76,%r11
+pushq %r11
+irmovq $85,%r11
+pushq %r11
+irmovq $46,%r11
+pushq %r11
+irmovq $61,%r11
+pushq %r11
+irmovq $5,%r11
+pushq %r11
+irmovq $85,%r11
+pushq %r11
+irmovq $52,%r11
+pushq %r11
+irmovq $88,%r11
+pushq %r11
+irmovq $50,%r11
+pushq %r11
+irmovq $28,%r11
+pushq %r11
+irmovq $35,%r11
+pushq %r11
+irmovq $32,%r11
+pushq %r11
+irmovq $17,%r11
+pushq %r11
+irmovq $70,%r11
+pushq %r11
+irmovq $49,%r11
+pushq %r11
+
+main:
+    popq %r14
+    rrmovq %r14, %rsi
+    rrmovq %r14, %rdi
+    
+    sorter:
+        popq %r14
+        andq %r14, %r14
+        je end
+        
+        rrmovq %r14, %rdx
+        rrmovq %r14, %rbx
+        
+        smallest:
+            subq %rsi, %rdx
+            jg largest 
+            rrmovq %r14, %rsi
+            jmp sorter
+        
+        largest:
+            subq %rdi, %rbx
+            jl sorter
+            rrmovq %r14, %rdi
+            jmp sorter
+    
+    end:
+        halt                   
+    
