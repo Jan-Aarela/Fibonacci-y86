@@ -1,0 +1,154 @@
+# https://boginw.github.io/js-y86-64/
+
+.pos 0
+    irmovq array,%r11
+    irmovq 233,%r12
+    rmmovq %r12,(%r11)
+    irmovq 987,%r12
+    rmmovq %r12,8(%r11)
+    irmovq 1597,%r12
+    rmmovq %r12,16(%r11)
+    irmovq 610,%r12
+    rmmovq %r12,24(%r11)
+    irmovq $0,%r12
+    rmmovq %r12,32(%r11)
+
+
+main:
+    irmovq stack, %rsp      # Initializes stack.
+    jmp start   
+
+# Gets the next value from array and starts checking the number.
+start:
+    mrmovq (%r11), %rcx     # Takes value from memory address.
+    andq %rcx, %rcx
+    je end                  # If number = 0, quits the program.
+    call process            # If number > 0, proceeds to the checker.
+ 
+    irmovq $8, %rbx         # Array "offsetter".
+    addq %rbx, %r11         # Offsets memory address in array by 8.
+    jmp start               # Returns to init to check next value in array.
+
+
+# Starts processing the number.
+# Using formula 5*x^2+-4 == (int sqrt(5*x^2+-4))^2.
+process:
+    rrmovq %rcx, %r8        # Sets multiplicant & multiplier (%r8 & %r9)
+    rrmovq %rcx, %r9
+    call multiplier         # Calculates square.
+
+    rrmovq %r10, %r8
+    irmovq $5, %r9
+    call multiplier         # Multiplies square by 5.
+
+    irmovq $4, %r14         # 4 additor / subtractor.
+    addq %r14, %r10         
+    call squareroot         # Calculates root(square + 4).
+
+    rrmovq %r8, %r12        
+    rrmovq %rsi, %r8
+    rrmovq %rsi, %r9
+    call multiplier         # Calculates square.
+
+    subq %r12, %r10
+    je isfibonacci          # If perfect square (+4), return to init.
+
+
+    rrmovq %r12, %r8        
+    rrmovq %r8, %r10
+    subq %r14, %r10         # 2x 4 additor / subtractor.
+    subq %r14, %r10         
+    call squareroot         # Calculates root(square - 4).
+
+    rrmovq %r8, %r12        
+    rrmovq %rsi, %r8
+    rrmovq %rsi, %r9
+    call multiplier         # Calculates square.
+    
+    subq %r12, %r10
+    je isfibonacci          # If perfect square (-4), return to init.
+    
+    jmp notfibonacci        # If conditions are not met, number is not a fibonacci.
+    
+    isfibonacci:
+        ret                 # Returns back start.
+
+
+# Calcualates value with peasant multiplication. 
+multiplier:
+    irmovq $0, %r10         # Output
+    irmovq $1, %rsi         # Bit checker
+    irmovq $1, %rdi         # Multiplier
+    
+    irmovq $12, %rbx        # Non ideal lenght.
+    irmovq $1, %rdx         # Subract from %rbx 
+    
+    addition:
+        andq %r9, %rsi      # Checks multiplier's boolean value.
+        je shift            # If equals 0, skips additon.
+        addq %r8, %r10      # Adds n * %r8 to %r10. 
+        
+        jmp shift           
+        
+    shift:
+        addq %rdi, %rdi     # Doubles the multiplier, effectivly making a bitshift.
+        rrmovq %rdi, %rsi
+        addq %r8, %r8       #
+        
+        subq %rdx, %rbx     # Reduces remaining multiplication count by 1.
+        je endmul           # If count is 0, multiplication ends
+        
+        jmp addition        # If count > 0, continues multiplication 
+    
+    endmul:
+        ret                 # Returns back to process.
+
+    
+# Calculates root by calculating squared root and comparing it to original value. 
+# Slowest part of the code by a longshot.
+squareroot:
+    irmovq $1, %rsi         # Root
+    irmovq $1, %rdi         # Increment
+    irmovq $2, %r12         # Add 2 to rdi
+    rrmovq %r10, %r8        # Comparison value
+    irmovq $1, %r9          # Current size
+    irmovq $1, %rdx         # Diff to previous
+    
+    multi:
+        rrmovq %r9, %r10    # Old size
+        subq %r8, %r9
+        je endroot
+        jg correction
+        
+        addq %r12 , %rdx
+        addq %rdx, %r10     # New size
+        rrmovq %r10, %r9
+        
+        addq %rdi, %rsi
+        
+        jmp multi
+        
+    correction:
+        subq %rdi, %rsi     # Reduces the root by 1 icrement.
+        jmp endroot
+    
+    endroot:
+        ret
+        
+
+notfibonacci: 
+    rrmovq %rcx, %rax        # Moves non-finonacci number into %rax.
+    jmp end                  # And ultimately quits the code.
+
+    
+# Quitting.    
+end:
+    halt
+
+
+.pos 0x300
+stack:
+
+    
+.pos 0x700
+array:
