@@ -7,7 +7,7 @@ irmovq $17,%rcx
 pushq %rcx
 irmovq $8,%rcx
 pushq %rcx
-irmovq $2,%rcx
+irmovq $2,%rcx               # Example values.
 pushq %rcx
 irmovq $1,%rcx
 pushq %rcx
