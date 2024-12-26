@@ -1,0 +1,31 @@
+.pos 0x400
+Array:
+.align 8
+.quad 0x69
+.quad 0x69
+.quad 0x69
+.quad 0x69
+.quad 0x69
+.quad 0x69
+.quad 0x69
+.quad 0x69
+.quad 0x69
+.pos 0
+
+
+main:
+    irmovq $1024, %rcx          # Memory location
+    irmovq $1, %rbx             # Contant for adding lenght.
+    irmovq $8, %rsp             # Location offsetter.
+    
+    Count:
+        mrmovq (%rcx), %rdx     # Load value from memory.
+        andq %rdx, %rdx         #check value
+        je end
+        
+        addq %rbx, %rax         # +1 lenght
+        addq %rsp, %rcx         # Offsets memory location by 8.
+        
+        jmp Count               # Jumps back to count.
+    end:
+        halt                    
