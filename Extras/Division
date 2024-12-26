@@ -1,0 +1,19 @@
+# https://boginw.github.io/js-y86-64/
+
+.pos 0
+irmovq $35692,%rdi
+irmovq $975,%rsi
+
+main:
+    subq %rsi, %rdi
+    
+    andq %rdi, %rdi
+    jl end
+    irmovq $1, %rcx
+    addq %rcx, %rax
+    
+    jmp main
+    
+    end:
+        halt
+    
