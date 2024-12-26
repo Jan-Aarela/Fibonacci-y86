@@ -7,6 +7,6 @@ _[Peasant Multiplication](https://raw.githubusercontent.com/Jan-Aarela/Fibonacci
 
 _[Root Calculation](https://raw.githubusercontent.com/Jan-Aarela/Fibonacci-y86/refs/heads/main/pics/squarred.jpg)_
 
-[Code](https://raw.githubusercontent.com/Jan-Aarela/Fibonacci-y86/refs/heads/main/Extras/Root) _[Root Algorithm](https://raw.githubusercontent.com/Jan-Aarela/Fibonacci-y86/refs/heads/main/pics/Root%20algorithm.jpg)_
+[Code](https://raw.githubusercontent.com/Jan-Aarela/Fibonacci-y86/refs/heads/main/Extras/Root) - _[Root Algorithm](https://raw.githubusercontent.com/Jan-Aarela/Fibonacci-y86/refs/heads/main/pics/Root%20algorithm.jpg)_
 
 _[Code examples](https://github.com/Jan-Aarela/Fibonacci-y86/tree/main/Extras)_
