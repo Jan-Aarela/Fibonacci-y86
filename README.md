@@ -1,6 +1,6 @@
 # _Rekisteri helvettiä koko tämä paska_
 
-![alt_text](https://raw.githubusercontent.com/Jan-Aarela/Fibonacci-y86/refs/heads/main/pics/notepad%2B%2B_n6BlvgxXl2.png)
+![alt_text](https://raw.githubusercontent.com/Jan-Aarela/Fibonacci-y86/refs/heads/main/pics/Fibonacci%20code%20in%20C.png)
 
 
 [Multiplication function uses peasant multiplication method](https://raw.githubusercontent.com/Jan-Aarela/Fibonacci-y86/refs/heads/main/pics/multiplication.jpg)
