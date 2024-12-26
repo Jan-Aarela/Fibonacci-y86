@@ -1,7 +1,7 @@
 # https://boginw.github.io/js-y86-64/
 
 .pos 0
-irmovq $60035,%r13
+irmovq $60035,%r13            # Input.
 
 main:
     rrmovq %r13, %rax
@@ -11,7 +11,6 @@ main:
     andq %r12, %rax
     rrmovq %rax, %r13
     
-
     irmovq $0xF000, %r11
     andq %r11, %rbx
     
@@ -23,6 +22,5 @@ main:
         subq %r10, %rbx
         jg loop
         
-    
     end:
         halt      
