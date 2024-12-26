@@ -56,8 +56,7 @@ squareroot:
         exitmul:
             addq %r13, %rax
             ret
-        
-        
+            
     halfroot:
   
         rrmovq %rdi, %rsi   # Sets the previous root value to current.
@@ -68,7 +67,6 @@ squareroot:
         
         jmp checker
     
-    
     rounding:
         irmovq $1, %r12     # Subtracs 1 from root.
         subq %r12, %rsi
@@ -76,8 +74,6 @@ squareroot:
     
     endroot: 
         jmp end
-
-
 
 end:
     halt
