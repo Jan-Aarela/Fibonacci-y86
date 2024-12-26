@@ -14,6 +14,20 @@
     rmmovq %r12,32(%r11)
 
 
+.pos 0
+    irmovq array,%r11
+    irmovq 233,%r12
+    rmmovq %r12,(%r11)
+    irmovq 987,%r12
+    rmmovq %r12,8(%r11)
+    irmovq 1597,%r12
+    rmmovq %r12,16(%r11)
+    irmovq 1590,%r12
+    rmmovq %r12,24(%r11)
+    irmovq $0,%r12
+    rmmovq %r12,32(%r11)
+
+
 main:
     irmovq stack, %rsp      # Initializes stack.
     jmp start   
@@ -44,8 +58,8 @@ process:
     irmovq $4, %r14         # 4 additor.
     addq %r14, %r10         
     call squareroot         # Calculates root(square + 4).
-
-    rrmovq %r8, %r12        
+    
+    rrmovq %r8, %r12        # Saves 
     rrmovq %rsi, %r8
     rrmovq %rsi, %r9
     call multiplier         # Calculates square.
@@ -55,8 +69,8 @@ process:
 
     rrmovq %r12, %r8        
     rrmovq %r8, %r10
-    irmovq $8, %r14
-    subq %r14, %r10         # 8  subtractor.
+    irmovq $8, %r14         # 8  subtractor.
+    subq %r14, %r10         
     call squareroot         # Calculates root(square - 4).
 
     rrmovq %r8, %r12        
@@ -112,8 +126,7 @@ squareroot:
     irmovq $0, %rdi         # Previous root.
     irmovq $1, %r12         # Multiplier.
     irmovq $1, %r13         # Addtiton / subtraction constant.
-    irmovq $1, %r14         # Storage for multiplier.
-    irmovq $0, %rbp         # 
+    irmovq $0, %r14         # Storage for exponent.
     irmovq $1, %rcx         # Exponent.
     
     checker:
@@ -136,28 +149,27 @@ squareroot:
         rrmovq %rdi, %r10
         addq %rsi, %r10     # Combines previous and current root values together.
         
-        rrmovq %rcx, %rbp
-        call exponentiation 
+        rrmovq %rcx, %r14
+        call exponentiation # 2^(r14) * (r10) 
         
         addq %rdx, %r10
         rrmovq %r10, %r9    # Sets current squared root value.
         
-        addq %r14, %r14     # Doubles multiplier.
-        rrmovq  %r14, %r12
+        addq %r12, %r12     # Doubles multiplier.
         
         jmp checker         
         
     exponentiation:
-        subq %r13, %rbp     # Checks exponents value. If after subraction 0, skips multilication.
+        subq %r13, %r14     # Checks exponents value. If after subraction 0, skips.
         je exitexpo
-        addq %r10, %r10     # Multiplication by 2.
+        addq %r10, %r10     # Doubles the value.
         
         jmp exponentiation
     
     exitexpo:
         addq %r13, %rcx     # Increases exponent value by 1.
         ret
-        
+    
     halfroot:
         rrmovq %rdi, %rsi   # Sets the previous root value to current.
         rrmovq %rdx, %r9    # Sets the previous squared value to current.
@@ -170,15 +182,16 @@ squareroot:
     rounding:
         irmovq $1, %r12     # Subtracs 1 from root.
         subq %r12, %rsi
-
+        
         jmp endroot    
     
     endroot: 
         ret
 
 
+# Moves value from an array if the number is not a fibonacci number.
 notfibonacci: 
-    mrmovq (%r11), %rax       # Moves non-finonacci number into %rax.
+    mrmovq (%r11), %rax     # Moves non-finonacci number into %rax.
     jmp end                 # And ultimately quits the code.
 
     
