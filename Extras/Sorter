@@ -15,7 +15,7 @@ irmovq $5,%r11
 pushq %r11
 irmovq $85,%r11
 pushq %r11
-irmovq $52,%r11
+irmovq $52,%r11            # Example values.
 pushq %r11
 irmovq $88,%r11
 pushq %r11
@@ -35,29 +35,29 @@ irmovq $49,%r11
 pushq %r11
 
 main:
-    popq %r14
-    rrmovq %r14, %rsi
+    popq %r14                # Pops next value from an array.
+    rrmovq %r14, %rsi        # Loads value to 
     rrmovq %r14, %rdi
     
     sorter:
-        popq %r14
-        andq %r14, %r14
-        je end
+        popq %r14             # Pops next value from an array.
+        andq %r14, %r14        
+        je end                # If value = 0, jumps to end.
         
-        rrmovq %r14, %rdx
+        rrmovq %r14, %rdx     # Loads value to comparison registers.
         rrmovq %r14, %rbx
         
-        smallest:
-            subq %rsi, %rdx
-            jg largest 
-            rrmovq %r14, %rsi
-            jmp sorter
-        
-        largest:
-            subq %rdi, %rbx
-            jl sorter
-            rrmovq %r14, %rdi
-            jmp sorter
+    smallest:
+        subq %rsi, %rdx       # If value is larger than current smallest number,
+        jg largest            # Jumps to "largest".
+        rrmovq %r14, %rsi     # Sets new smallest number.
+        jmp sorter            # Jumps back to sorter.
+    
+    largest:
+        subq %rdi, %rbx        # If value is smaller than current largest number,
+        jl sorter              # Jumps back to sorter.
+        rrmovq %r14, %rdi      # Sets new larger number.
+        jmp sorter             # Jumps back to sorter.
     
     end:
         halt                   
