@@ -46,16 +46,16 @@ squareroot:
         
         jmp checker         
         
-        multiply:
-            subq %r13, %rcx
-            je exitmul
-            addq %r10, %r10 
-            
-            jmp multiply
+    multiply:
+        subq %r13, %rcx     
+        je exitmul
+        addq %r10, %r10 
         
-        exitmul:
-            addq %r13, %rax
-            ret
+        jmp multiply
+    
+    exitmul:
+        addq %r13, %rax
+        ret
             
     halfroot:
   
