@@ -1,0 +1,28 @@
+# https://boginw.github.io/js-y86-64/
+
+.pos 0
+irmovq $60035,%r13
+
+main:
+    rrmovq %r13, %rax
+    rrmovq %r13, %rbx
+    
+    irmovq $0xFFF, %r12
+    andq %r12, %rax
+    rrmovq %rax, %r13
+    
+
+    irmovq $0xF000, %r11
+    andq %r11, %rbx
+    
+    irmovq $1, %r8
+    irmovq $4096, %r10
+    
+    loop:
+        addq %r8, %r14
+        subq %r10, %rbx
+        jg loop
+        
+    
+    end:
+        halt      
