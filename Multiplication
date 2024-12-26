@@ -1,0 +1,32 @@
+# https://boginw.github.io/js-y86-64/
+
+irmovq $256, %r13           # Multiplicant        
+irmovq $54, %r14            # Multiplier 
+
+main:
+
+    irmovq $1, %r11         # bit checker
+    irmovq $1, %r10         # multiplier
+    
+    irmovq $16, %rcx        # palcefolder len
+    irmovq $1, %rdx         # subract from %rcx 
+    
+addition:
+    andq %r13, %r11
+    je shift
+    addq %r14, %rax
+    
+    jmp shift
+    
+shift:
+    addq %r10, %r10
+    rrmovq %r10, %r11
+    addq %r14, %r14
+    
+    subq %rdx, %rcx
+    je end    
+    
+    jmp addition
+
+end:
+    halt
