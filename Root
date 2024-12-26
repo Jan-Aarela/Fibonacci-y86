@@ -1,0 +1,87 @@
+# https://boginw.github.io/js-y86-64/
+
+irmovq stack, %rsp
+irmovq 4181, %r10          # Input.
+
+squareroot:
+    irmovq $1, %rsi         # Root.
+    rrmovq %r10, %r8        # Comparsion value.
+    irmovq $1, %r9          # Current squared root.
+    irmovq $0, %rdx         # Previous squared root. 
+    irmovq $0, %rdi         # Previous root.
+    irmovq $1, %r12         # Multiplier.
+    irmovq $1, %r13         # Addtiton / subtraction constant.
+    irmovq $1, %r14         # Storage for multiplier.
+    irmovq $0, %rcx         # 
+    irmovq $1, %rax
+    
+    checker:
+        rrmovq %r9, %r10
+        subq %r8, %r9
+        je endroot          # If squared root = comparison value, quits root function.
+        jl rootup           # If squared root < comparison value, starts increasing exponent. 
+        
+        subq %r13, %r12
+        subq %r13, %r12
+        je rounding
+        jg halfroot         # If squared root > comparison value, starts reducing exponent.
+        
+    rootup::
+        rrmovq %rsi, %rdi   # Saves previous root.
+        rrmovq %r10, %rdx   # Saves previous squared root.
+        
+        addq %r12, %rsi     # increases the root value.
+        
+        rrmovq %rdi, %r10
+        addq %rsi, %r10     # Combines previous and current root values together.
+        
+        rrmovq %rax, %rcx
+        call multiply
+        
+        addq %rdx, %r10
+        rrmovq %r10, %r9    # Sets current squared root value.
+        
+        addq %r14, %r14     # Doubles multiplier.
+        rrmovq  %r14, %r12
+        
+        jmp checker         
+        
+        multiply:
+            subq %r13, %rcx
+            je exitmul
+            addq %r10, %r10 
+            
+            jmp multiply
+        
+        exitmul:
+            addq %r13, %rax
+            ret
+        
+        
+    halfroot:
+  
+        rrmovq %rdi, %rsi   # Sets the previous root value to current.
+        rrmovq %rdx, %r9    # Sets the previous squared value to current.
+        irmovq $1, %r12     # Resets multiplier value.
+        irmovq $1, %r14     # Resets multiplier value.
+        irmovq $1, %rax
+        
+        jmp checker
+    
+    
+    rounding:
+        irmovq $1, %r12     # Subtracs 1 from root.
+        subq %r12, %rsi
+        jmp endroot    
+    
+    endroot: 
+        jmp end
+
+
+
+end:
+    halt
+
+    
+.pos 0x400
+    stack:
