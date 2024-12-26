@@ -1,18 +1,18 @@
 # https://boginw.github.io/js-y86-64/
 
 .pos 0
-irmovq $35692,%rdi
-irmovq $975,%rsi
+irmovq $35692,%rdi     # Dividend
+irmovq $975,%rsi       # Divisor
 
 main:
-    subq %rsi, %rdi
+    subq %rsi, %rdi    # Subracts by divisor from divident.
     
     andq %rdi, %rdi
-    jl end
-    irmovq $1, %rcx
-    addq %rcx, %rax
+    jl end             # If value < 0. ends the proces.
+    irmovq $1, %rcx    
+    addq %rcx, %rax    # Increases result by 1.
     
-    jmp main
+    jmp main           # Repeats the process.
     
     end:
         halt
