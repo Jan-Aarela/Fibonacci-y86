@@ -1,0 +1,41 @@
+# https://boginw.github.io/js-y86-64/
+
+.pos 0
+irmovq 0x800,%rbp
+irmovq 0x800,%rsp
+irmovq $17,%rcx
+pushq %rcx
+irmovq $8,%rcx
+pushq %rcx
+irmovq $2,%rcx
+pushq %rcx
+irmovq $1,%rcx
+pushq %rcx
+irmovq $16,%rcx
+pushq %rcx
+
+main:
+    irmovq $1, %r11
+    
+    sum:
+        popq %rcx
+        andq %rcx, %rcx
+        je avg
+        
+        
+        addq %rcx, %rbx
+        irmovq $1, %rdx
+        addq %rdx, %r8
+        
+        jmp sum
+    
+    avg:
+        subq %r8, %rbx
+        andq %rbx, %rbx
+        jle end
+        addq %r11, %rax
+        
+        jmp avg
+            
+    end:
+        halt     
