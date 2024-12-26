@@ -6,13 +6,12 @@
     rmmovq %r12,(%r11)
     irmovq $987,%r12
     rmmovq %r12,8(%r11)
-    irmovq $1597,%r12        # Input numbers to be determided if fibonacci.
+    irmovq $1597,%r12        # Example input numbers to be determided if fibonacci.
     rmmovq %r12,16(%r11)
     irmovq $1590,%r12
     rmmovq %r12,24(%r11)
     irmovq $0,%r12
     rmmovq %r12,32(%r11)
-
 
 
 main:
@@ -80,7 +79,7 @@ multiplier:
     irmovq $1, %rsi         # Bit checker
     irmovq $1, %rdi         # Multiplier
     
-    irmovq $12, %rbx        # Non ideal lenght.
+    irmovq $12, %rbx        # Non ideal string lenght.
     irmovq $1, %rdx         # Subract from %rbx 
     
     addition:
@@ -105,6 +104,7 @@ multiplier:
 
     
 # Calculates root by calculating squared root and comparing it to original value. 
+# Using formula root^2 = multiplier * (prev. root + cur. root) + prev.square.
 squareroot:
     irmovq $1, %rsi         # Root.
     rrmovq %r10, %r8        # Comparsion value.
@@ -113,7 +113,7 @@ squareroot:
     irmovq $0, %rdi         # Previous root.
     irmovq $1, %r12         # Multiplier.
     irmovq $1, %r13         # Addtiton / subtraction constant.
-    irmovq $0, %r14         # Storage for exponent.
+    irmovq $0, %r14         # Copy of exponent.
     irmovq $1, %rcx         # Exponent.
     
     checker:
