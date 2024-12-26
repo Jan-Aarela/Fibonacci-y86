@@ -159,7 +159,6 @@ squareroot:
         ret
         
     halfroot:
-  
         rrmovq %rdi, %rsi   # Sets the previous root value to current.
         rrmovq %rdx, %r9    # Sets the previous squared value to current.
         irmovq $1, %r12     # Resets multiplier value.
@@ -171,6 +170,7 @@ squareroot:
     rounding:
         irmovq $1, %r12     # Subtracs 1 from root.
         subq %r12, %rsi
+
         jmp endroot    
     
     endroot: 
