@@ -18,24 +18,24 @@ main:
     irmovq $1, %r11
     
     sum:
-        popq %rcx
-        andq %rcx, %rcx
-        je avg
+        popq %rcx            # Pops next value from stack.
+        andq %rcx, %rcx      
+        je avg               # If value is 0, jumps to average.
         
+        addq %rcx, %rbx      # Adds all values into one.
+        addq %r11, %r8       # Increases dividend by 1.
         
-        addq %rcx, %rbx
-        irmovq $1, %rdx
-        addq %rdx, %r8
-        
-        jmp sum
+        jmp sum              # Repeats process.
     
     avg:
-        subq %r8, %rbx
-        andq %rbx, %rbx
-        jle end
-        addq %r11, %rax
+        subq %r8, %rbx       # Subracts by dividend from sum.
+        andq %rbx, %rbx      
+        jle end              # If remainding value =< 0, ends process.
         
-        jmp avg
+        addq %r11, %rax      # Adds 1 to result.
+        
+        jmp avg              # Repeats process.
             
     end:
         halt     
+
