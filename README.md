@@ -7,4 +7,8 @@ _[Multiplication function uses peasant multiplication method](https://raw.github
 
 _[Root function uses modified binomial form](https://raw.githubusercontent.com/Jan-Aarela/Fibonacci-y86/refs/heads/main/pics/squarred.jpg)_
 
+_[Root algorithm](https://raw.githubusercontent.com/Jan-Aarela/Fibonacci-y86/refs/heads/main/pics/Root%20algorithm.jpg)_
+
+
+
 _[Code examples](https://github.com/Jan-Aarela/Fibonacci-y86/tree/main/Extras)_
