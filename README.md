@@ -4,7 +4,7 @@ _![alt_text](https://raw.githubusercontent.com/Jan-Aarela/Fibonacci-y86/refs/hea
 ## _In a nutshell_
 ![alt_text](https://raw.githubusercontent.com/Jan-Aarela/Fibonacci-y86/refs/heads/main/pics/Explantion.png)
 
-# _Used methods and explanations_
+# 	`#RRGGBB`_Used methods and explanations_
 
 ## _Multiplication_ <sub>[Code](https://raw.githubusercontent.com/Jan-Aarela/Fibonacci-y86/refs/heads/main/Extras/Multiplication)<sup>
 
