@@ -2,7 +2,7 @@
 _![alt_text](https://raw.githubusercontent.com/Jan-Aarela/Fibonacci-y86/refs/heads/main/pics/Fibonacci%20code%20in%20C.png)_
 
 ## _In a nutshell_
-![alt_text](https://raw.githubusercontent.com/Jan-Aarela/Fibonacci-y86/refs/heads/main/pics/notepad%2B%2B_3DdV7sHzrg.png)
+![alt_text](https://raw.githubusercontent.com/Jan-Aarela/Fibonacci-y86/refs/heads/main/pics/Explanation.png)
 
 ***[Code](https://raw.githubusercontent.com/Jan-Aarela/Fibonacci-y86/refs/heads/main/Extras/Multiplication)*** : _[Peasant Multiplication](https://raw.githubusercontent.com/Jan-Aarela/Fibonacci-y86/refs/heads/main/pics/multiplication.jpg)_
 
