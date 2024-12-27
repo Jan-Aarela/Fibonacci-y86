@@ -17,5 +17,5 @@ _![alt_text](https://raw.githubusercontent.com/Jan-Aarela/Fibonacci-y86/refs/hea
 
 ![alt_text](https://raw.githubusercontent.com/Jan-Aarela/Fibonacci-y86/refs/heads/main/pics/Root.png)
 
-## _Root algorithm_
+## _Root algorithm_ _[Geogebra file](https://github.com/Jan-Aarela/Fibonacci-y86/blob/main/pics/Root.ggb)_
 ![alt_text](https://raw.githubusercontent.com/Jan-Aarela/Fibonacci-y86/refs/heads/main/pics/Graph.png)
