@@ -11,6 +11,8 @@ After that you need to compare 5*x^2+-4 == root^2.
 If true, number is a fibonacci.
 
 
+![alt_text](https://raw.githubusercontent.com/Jan-Aarela/Fibonacci-y86/refs/heads/main/pics/notepad%2B%2B_3DdV7sHzrg.png)
+
 ***[Code](https://raw.githubusercontent.com/Jan-Aarela/Fibonacci-y86/refs/heads/main/Extras/Multiplication)*** : _[Peasant Multiplication](https://raw.githubusercontent.com/Jan-Aarela/Fibonacci-y86/refs/heads/main/pics/multiplication.jpg)_
 
 ***[Code](https://raw.githubusercontent.com/Jan-Aarela/Fibonacci-y86/refs/heads/main/Extras/Root)‎*** : _[Root Calculation](https://raw.githubusercontent.com/Jan-Aarela/Fibonacci-y86/refs/heads/main/pics/squarred.jpg)_
