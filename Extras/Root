@@ -1,7 +1,7 @@
 # https://boginw.github.io/js-y86-64/
 
 irmovq stack, %rsp
-irmovq 255, %r10          # Example Input.
+irmovq 2556, %r10          # Example Input.
 
 squareroot:
     irmovq $1, %rsi         # Root.
