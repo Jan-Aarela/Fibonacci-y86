@@ -13,6 +13,6 @@ _![alt_text](https://raw.githubusercontent.com/Jan-Aarela/Fibonacci-y86/refs/hea
 
 ## Squareroot
 ***[Code](https://raw.githubusercontent.com/Jan-Aarela/Fibonacci-y86/refs/heads/main/Extras/Root)‎*** : _[Root Calculation](https://raw.githubusercontent.com/Jan-Aarela/Fibonacci-y86/refs/heads/main/pics/squarred.jpg)_
-‎ _[Geogebra file](https://github.com/Jan-Aarela/Fibonacci-y86/blob/main/pics/Root.ggb)_ 
+‎: _[Geogebra file](https://github.com/Jan-Aarela/Fibonacci-y86/blob/main/pics/Root.ggb)_ 
 
-: ![alt_text](https://raw.githubusercontent.com/Jan-Aarela/Fibonacci-y86/refs/heads/main/pics/Graph.png)
+![alt_text](https://raw.githubusercontent.com/Jan-Aarela/Fibonacci-y86/refs/heads/main/pics/Graph.png)
