@@ -4,29 +4,27 @@ irmovq $54, %r13            # Multiplier.
 irmovq $256, %r14           # Multiplicant.
 
 main:
-
     irmovq $1, %r11         # Bit value.
     irmovq $1, %r10         # Multiplier.
-    
     irmovq $16, %rcx        # Palcefolder len (non ideal).
     irmovq $1, %rdx         # Subract from %rcx.
     
-addition:
-    andq %r13, %r11         # Checks if bit value is 1.
-    je shift                # If not, skips addition and shifts bit.
-    addq %r14, %rax         # Adds multipciant to result.
+    addition:
+        andq %r13, %r11         # Checks if bit value is 1.
+        je shift                # If not, skips addition and shifts bit.
+        addq %r14, %rax         # Adds multipciant to result.
+        
+        jmp shift               # Jumps to bit shift.
+        
+    shift:
+        addq %r10, %r10         # Doubles bit value.
+        rrmovq %r10, %r11       # Copies value to bit checker.
+        addq %r14, %r14         # Doubles the multiplicant.
+        
+        subq %rdx, %rcx         # Reduces lenght by 1.
+        je end                  # If leght is 0, ends the process.
+        
+        jmp addition            # Jumps to addition.
     
-    jmp shift               # Jumps to bit shift.
-    
-shift:
-    addq %r10, %r10         # Doubles bit value.
-    rrmovq %r10, %r11       # Copies value to bit checker.
-    addq %r14, %r14         # Doubles the multiplicant.
-    
-    subq %rdx, %rcx         # Reduces lenght by 1.
-    je end                  # If leght is 0, ends the process.
-    
-    jmp addition            # Jumps to addition.
-
-end:
-    halt
+    end:
+        halt
