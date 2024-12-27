@@ -6,15 +6,16 @@ _![alt_text](https://raw.githubusercontent.com/Jan-Aarela/Fibonacci-y86/refs/hea
 
 # _Used methods and explanations_
 
-## Multiplication
+## _Multiplication_
 ***[Code](https://raw.githubusercontent.com/Jan-Aarela/Fibonacci-y86/refs/heads/main/Extras/Multiplication)***
 
 ![alt_text](https://raw.githubusercontent.com/Jan-Aarela/Fibonacci-y86/refs/heads/main/pics/Multiplication.png)
 
-## Squareroot
+## _Squareroot_
 ***[Code](https://raw.githubusercontent.com/Jan-Aarela/Fibonacci-y86/refs/heads/main/Extras/Root)‎***
 ‎: _[Geogebra file](https://github.com/Jan-Aarela/Fibonacci-y86/blob/main/pics/Root.ggb)_ 
 
 ![alt_text](https://raw.githubusercontent.com/Jan-Aarela/Fibonacci-y86/refs/heads/main/pics/Root.png)
 
+## _Root algorithm_
 ![alt_text](https://raw.githubusercontent.com/Jan-Aarela/Fibonacci-y86/refs/heads/main/pics/Graph.png)
