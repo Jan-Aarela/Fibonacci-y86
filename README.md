@@ -7,7 +7,7 @@ _![alt_text](https://raw.githubusercontent.com/Jan-Aarela/Fibonacci-y86/refs/hea
 # _Used methods and explanations_
 
 ## Multiplication
-***[Code](https://raw.githubusercontent.com/Jan-Aarela/Fibonacci-y86/refs/heads/main/Extras/Multiplication)*** : _[Multiplication](https://raw.githubusercontent.com/Jan-Aarela/Fibonacci-y86/refs/heads/main/pics/multiplication.jpg)_ 
+***[Code](https://raw.githubusercontent.com/Jan-Aarela/Fibonacci-y86/refs/heads/main/Extras/Multiplication)*** : _[Multiplication](https://raw.githubusercontent.com/Jan-Aarela/Fibonacci-y86/refs/heads/main/pics/Multiplication.png)_ 
 
 ![alt_text](https://raw.githubusercontent.com/Jan-Aarela/Fibonacci-y86/refs/heads/main/pics/1.png)
 
