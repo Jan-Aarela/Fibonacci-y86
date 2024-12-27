@@ -27,7 +27,7 @@ main:
         
         addq %rbx, %rax         # +1 lenght
         addq %rsp, %rcx         # Offsets memory location by 8.
-        
         jmp Count               # Jumps back to count.
+
     end:
         halt                    
