@@ -9,7 +9,7 @@ _![alt_text](https://raw.githubusercontent.com/Jan-Aarela/Fibonacci-y86/refs/hea
 ## Multiplication
 ***[Code](https://raw.githubusercontent.com/Jan-Aarela/Fibonacci-y86/refs/heads/main/Extras/Multiplication)*** : _[Multiplication](https://raw.githubusercontent.com/Jan-Aarela/Fibonacci-y86/refs/heads/main/pics/Multiplication.png)_ 
 
-![alt_text](https://raw.githubusercontent.com/Jan-Aarela/Fibonacci-y86/refs/heads/main/pics/1.png)
+![alt_text](https://raw.githubusercontent.com/Jan-Aarela/Fibonacci-y86/refs/heads/main/pics/Multiplication.png)
 
 ## Squareroot
 ***[Code](https://raw.githubusercontent.com/Jan-Aarela/Fibonacci-y86/refs/heads/main/Extras/Root)‎*** : _[Root Calculation](https://raw.githubusercontent.com/Jan-Aarela/Fibonacci-y86/refs/heads/main/pics/squarred.jpg)_
