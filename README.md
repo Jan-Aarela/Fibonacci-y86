@@ -10,8 +10,8 @@ _![alt_text](https://raw.githubusercontent.com/Jan-Aarela/Fibonacci-y86/refs/hea
 
 ![alt_text](https://raw.githubusercontent.com/Jan-Aarela/Fibonacci-y86/refs/heads/main/pics/Multiplication.png)
 
-## _Squareroot_ ***[Code](https://raw.githubusercontent.com/Jan-Aarela/Fibonacci-y86/refs/heads/main/Extras/Root)‎***
+## _Squareroot_ <sub>[Code](https://raw.githubusercontent.com/Jan-Aarela/Fibonacci-y86/refs/heads/main/Extras/Root)‎<sub>
 ![alt_text](https://raw.githubusercontent.com/Jan-Aarela/Fibonacci-y86/refs/heads/main/pics/Root.png)
 
-## _Root algorithm_ _[Geogebra file](https://github.com/Jan-Aarela/Fibonacci-y86/blob/main/pics/Root.ggb)_
+## _Root algorithm_ <sub>[Geogebra file](https://github.com/Jan-Aarela/Fibonacci-y86/blob/main/pics/Root.ggb)<sub>
 ![alt_text](https://raw.githubusercontent.com/Jan-Aarela/Fibonacci-y86/refs/heads/main/pics/Graph.png)
