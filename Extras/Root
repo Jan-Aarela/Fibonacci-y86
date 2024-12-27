@@ -1,7 +1,7 @@
 # https://boginw.github.io/js-y86-64/
 
 irmovq stack, %rsp
-irmovq 4181, %r10          # Input.
+irmovq 255, %r10          # Example Input.
 
 squareroot:
     irmovq $1, %rsi         # Root.
@@ -11,9 +11,8 @@ squareroot:
     irmovq $0, %rdi         # Previous root.
     irmovq $1, %r12         # Multiplier.
     irmovq $1, %r13         # Addtiton / subtraction constant.
-    irmovq $1, %r14         # Storage for multiplier.
-    irmovq $0, %rcx         # 
-    irmovq $1, %rax
+    irmovq $0, %r14         # Copy of exponent.
+    irmovq $1, %rcx         # Exponent.
     
     checker:
         rrmovq %r9, %r10
@@ -23,10 +22,10 @@ squareroot:
         
         subq %r13, %r12
         subq %r13, %r12
-        je rounding
+        je rounding         # If sqaured root > comparison value multiplier = 0, rounds root.
         jg halfroot         # If squared root > comparison value, starts reducing exponent.
         
-    rootup::
+    rootup:
         rrmovq %rsi, %rdi   # Saves previous root.
         rrmovq %r10, %rdx   # Saves previous squared root.
         
@@ -35,49 +34,45 @@ squareroot:
         rrmovq %rdi, %r10
         addq %rsi, %r10     # Combines previous and current root values together.
         
-        rrmovq %rax, %rcx
-        call multiply
+        rrmovq %rcx, %r14
+        call exponentiation # 2^(r14) * (r10) 
         
         addq %rdx, %r10
         rrmovq %r10, %r9    # Sets current squared root value.
         
-        addq %r14, %r14     # Doubles multiplier.
-        rrmovq  %r14, %r12
+        addq %r12, %r12     # Doubles multiplier.
         
         jmp checker         
         
-    multiply:
-        subq %r13, %rcx     
-        je exitmul
-        addq %r10, %r10 
+    exponentiation:
+        subq %r13, %r14     # Checks exponents value. If after subraction 0, skips.
+        je exitexpo
+        addq %r10, %r10     # Doubles the value.
         
-        jmp multiply
+        jmp exponentiation
     
-    exitmul:
-        addq %r13, %rax
+    exitexpo:
+        addq %r13, %rcx     # Increases exponent value by 1.
         ret
-            
+    
     halfroot:
-  
         rrmovq %rdi, %rsi   # Sets the previous root value to current.
         rrmovq %rdx, %r9    # Sets the previous squared value to current.
         irmovq $1, %r12     # Resets multiplier value.
         irmovq $1, %r14     # Resets multiplier value.
-        irmovq $1, %rax
+        irmovq $1, %rcx     # Resets exponent value.
         
         jmp checker
     
     rounding:
         irmovq $1, %r12     # Subtracs 1 from root.
         subq %r12, %rsi
+        
         jmp endroot    
     
     endroot: 
-        jmp end
-
-end:
-    halt
-
+        halt
     
+        
 .pos 0x400
-    stack:
+stack:
