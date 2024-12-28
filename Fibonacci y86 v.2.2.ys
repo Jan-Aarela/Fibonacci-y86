@@ -125,7 +125,7 @@ squareroot:
         
         subq %r13, %r12
         subq %r13, %r12
-        je rounding         # If sqaured root > comparison value multiplier = 0, rounds root.
+        je rounding         # If sqaured root > comparison value and multiplier = 0, rounds root.
         jg halfroot         # If squared root > comparison value, starts reducing exponent.
         
     rootup:
