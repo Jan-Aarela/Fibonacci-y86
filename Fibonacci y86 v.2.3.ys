@@ -162,7 +162,7 @@ notfibonacci:
 end:
     halt
 
-.pos 0x300
+.pos 0x700
 stack:
     
 .pos 0x700
