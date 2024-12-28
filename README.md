@@ -4,6 +4,8 @@ _![alt_text](https://raw.githubusercontent.com/Jan-Aarela/Fibonacci-y86/refs/hea
 ## _In a nutshell_
 ![alt_text](https://raw.githubusercontent.com/Jan-Aarela/Fibonacci-y86/refs/heads/main/pics/Explantion.png)
 
+## _[Overall performance of Fibonacci code](https://lovelace.oulu.fi/answers/jaarela22@oulu.fi/tietokonej%C3%A4rjestelm%C3%A4t/tietokonej%C3%A4rjestelm%C3%A4t/tkj-y86-fibonacci/2038103/)_
+
 # _Used methods and explanations_
 
 ## _Multiplication_ <sub>[Code](https://raw.githubusercontent.com/Jan-Aarela/Fibonacci-y86/refs/heads/main/Extras/Multiplication)<sup>
@@ -17,4 +19,4 @@ _![alt_text](https://raw.githubusercontent.com/Jan-Aarela/Fibonacci-y86/refs/hea
 ![alt_text](https://raw.githubusercontent.com/Jan-Aarela/Fibonacci-y86/refs/heads/main/pics/Graph2.png)
 ![alt_text](https://raw.githubusercontent.com/Jan-Aarela/Fibonacci-y86/refs/heads/main/pics/Root%20algorithm%20explanation.png)
 
-_[Overall performance of Fibonacci code](https://lovelace.oulu.fi/answers/jaarela22@oulu.fi/tietokonej%C3%A4rjestelm%C3%A4t/tietokonej%C3%A4rjestelm%C3%A4t/tkj-y86-fibonacci/2038103/)_
+
