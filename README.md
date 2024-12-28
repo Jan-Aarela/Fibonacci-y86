@@ -1,7 +1,7 @@
 # _Rekisteri helvettiä tämä koko paska_ <sup>TM<sup>
 _Paskaa, aivan vitun sekasin kaikki rekisterit._
 
-_Neliöjuuri funktio saatananmoista mustaa magiaa._
+_Neliöjuuri funktio saatananmoista matemaattista mustaa magiaa._
 
 _Mutta vitun [**mint performance**](https://raw.githack.com/Jan-Aarela/Fibonacci-y86/refs/heads/main/Extras/Test%20results.html) niin aivan vitun sama._
 
