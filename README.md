@@ -5,6 +5,8 @@ _Neliöjuuri funktio saatananmoista mustaa magiaa._
 
 _Mutta vitun [mint performance](https://lovelace.oulu.fi/answers/jaarela22@oulu.fi/tietokonej%C3%A4rjestelm%C3%A4t/tietokonej%C3%A4rjestelm%C3%A4t/tkj-y86-fibonacci/2038103/) niin aivan vitun sama._
 
+## _Mandatory code in C to be implemented in y86_
+
 _![alt_text](https://raw.githubusercontent.com/Jan-Aarela/Fibonacci-y86/refs/heads/main/pics/Fibonacci%20code%20in%20C.png)_
 
 ## _In a nutshell_
