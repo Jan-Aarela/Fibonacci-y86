@@ -1,6 +1,7 @@
 # _Rekisteri helvettiä tämä koko paska_ <sup>TM<sup>
 Paskaa, aivan vitun sekasin kaikki registerit. 
-Neliöjuuri funcktio saatanan mustaa magiaa.
+
+Neliöjuuri funktio saatananmoista mustaa magiaa.
 
 ## _[Overall performance of the Fibonacci code](https://lovelace.oulu.fi/answers/jaarela22@oulu.fi/tietokonej%C3%A4rjestelm%C3%A4t/tietokonej%C3%A4rjestelm%C3%A4t/tkj-y86-fibonacci/2038103/)_
 
