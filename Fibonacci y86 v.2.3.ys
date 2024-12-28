@@ -8,7 +8,7 @@
     irmovq $987,%r12
     rmmovq %r12,8(%r11)
     irmovq $1597,%r12        # Example input numbers to be determided if fibonacci.
-    rmmovq %r12,16(%r11)
+    rmmovq %r12,16(%r11)     # For larger numbers, increase string lenght in multiplication parameters.
     irmovq $1590,%r12
     rmmovq %r12,24(%r11)
     irmovq $0,%r12
