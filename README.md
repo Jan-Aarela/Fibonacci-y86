@@ -1,5 +1,5 @@
 # _Rekisteri helvettiä tämä koko paska_ <sup>TM<sup>
-_Paskaa, aivan vitun sekasin kaikki registerit._
+_Paskaa, aivan vitun sekasin kaikki rekisterit._
 
 _Neliöjuuri funktio saatananmoista mustaa magiaa._
 
