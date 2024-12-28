@@ -19,17 +19,18 @@ main:
     irmovq stack, %rsp      # Initializes stack.
     jmp start   
 
+
 # Gets the next value from array and starts checking the number.
 start:
     mrmovq (%r11), %rcx     # Takes value from memory address.
     andq %rcx, %rcx
     je end                  # If number = 0, quits the program.
-    jmp process            # If number > 0, proceeds to the checker.
+    jmp process             # If number > 0, proceeds to the checker.
 
-offset:
-    irmovq $8, %rbx         # Array "offsetter".
-    addq %rbx, %r11         # Offsets memory address in array by 8.
-    jmp start               # Returns to init to check next value in array.
+    offset:
+        irmovq $8, %rbx     # Array "offsetter".
+        addq %rbx, %r11     # Offsets memory address in array by 8.
+        jmp start           # Returns to init to check next value in array.
 
 
 # Starts processing the number.
@@ -60,7 +61,6 @@ multiplier:
     irmovq $0, %r10         # Output
     irmovq $1, %rsi         # Bit checker
     irmovq $1, %rdi         # Multiplier
-    
     irmovq $12, %rbx        # Non ideal string lenght.
     irmovq $1, %rdx         # Subract from %rbx 
     
@@ -101,12 +101,12 @@ squareroot:
     checker:
         rrmovq %r9, %r10
         subq %r8, %r9
-        je endroot          # If squared root = comparison value, quits root function.
+        je offset           # If squared root = comparison value, number is perferct square, thus fibonacci number.
         jl rootup           # If squared root < comparison value, starts increasing exponent. 
         
         subq %r13, %r12
         subq %r13, %r12
-        je rounding         # If sqaured root > comparison value and multiplier = 0, rounds root.
+        je notperfsquare    # If sqaured root > comparison value and multiplier = 0, number is not perfect square.
         jg halfroot         # If squared root > comparison value, starts reducing exponent.
         
     rootup:
@@ -148,11 +148,8 @@ squareroot:
         
         jmp checker
     
-    rounding:
-        ret                 # If is not a perfect square, returns back to process.
-
-    endroot: 
-        jmp offset          # If number is a perfect square, jumps preparing next value.
+    notperfsquare:
+        ret                 # Returns back to process.
 
 
 # Moves value from an array if the number is not a fibonacci number.
