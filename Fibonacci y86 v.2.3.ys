@@ -24,8 +24,9 @@ start:
     mrmovq (%r11), %rcx     # Takes value from memory address.
     andq %rcx, %rcx
     je end                  # If number = 0, quits the program.
-    call process            # If number > 0, proceeds to the checker.
- 
+    jmp process            # If number > 0, proceeds to the checker.
+
+offset:
     irmovq $8, %rbx         # Array "offsetter".
     addq %rbx, %r11         # Offsets memory address in array by 8.
     jmp start               # Returns to init to check next value in array.
@@ -45,34 +46,14 @@ process:
     irmovq $4, %r14         # 4 additor.
     addq %r14, %r10         
     call squareroot         # Calculates root(square + 4).
-    
-    rrmovq %r8, %r12        # Saves 
-    rrmovq %rsi, %r8
-    rrmovq %rsi, %r9
-    call multiplier         # Calculates square.
 
-    subq %r12, %r10
-    je isfibonacci          # If perfect square (+4), return to init.
-
-    rrmovq %r12, %r8        
     rrmovq %r8, %r10
     irmovq $8, %r14         # 8  subtractor.
     subq %r14, %r10         
     call squareroot         # Calculates root(square - 4).
 
-    rrmovq %r8, %r12        
-    rrmovq %rsi, %r8
-    rrmovq %rsi, %r9
-    call multiplier         # Calculates square.
-
-    subq %r12, %r10
-    je isfibonacci          # If perfect square (-4), return to init.
-
     jmp notfibonacci        # If conditions are not met, number is not a fibonacci.
     
-    isfibonacci:
-        ret                 # Returns back start.
-
 
 # Calcualates value with peasant multiplication. 
 multiplier:
@@ -168,13 +149,10 @@ squareroot:
         jmp checker
     
     rounding:
-        irmovq $1, %r12     # Subtracs 1 from root.
-        subq %r12, %rsi
-        
-        jmp endroot    
-    
+        ret                 # If is not a perfect square, returns back to process.
+
     endroot: 
-        ret
+        jmp offset          # If number is a perfect square, jumps preparing next value.
 
 
 # Moves value from an array if the number is not a fibonacci number.
@@ -186,7 +164,6 @@ notfibonacci:
 # Quitting.    
 end:
     halt
-
 
 .pos 0x300
 stack:
