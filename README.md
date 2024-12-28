@@ -3,7 +3,7 @@ Paskaa, aivan vitun sekasin kaikki registerit.
 
 Neliöjuuri funktio saatananmoista mustaa magiaa.
 
-## _[Overall performance of the Fibonacci code](https://lovelace.oulu.fi/answers/jaarela22@oulu.fi/tietokonej%C3%A4rjestelm%C3%A4t/tietokonej%C3%A4rjestelm%C3%A4t/tkj-y86-fibonacci/2038103/)_
+Mutta vitun [mint performance](https://lovelace.oulu.fi/answers/jaarela22@oulu.fi/tietokonej%C3%A4rjestelm%C3%A4t/tietokonej%C3%A4rjestelm%C3%A4t/tkj-y86-fibonacci/2038103/) niin aivan vitun sama.
 
 _![alt_text](https://raw.githubusercontent.com/Jan-Aarela/Fibonacci-y86/refs/heads/main/pics/Fibonacci%20code%20in%20C.png)_
 
