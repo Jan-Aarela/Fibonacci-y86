@@ -3,7 +3,7 @@ _Paskaa, aivan vitun sekasin kaikki rekisterit._
 
 _Neliöjuuri funktio saatananmoista mustaa magiaa._
 
-_Mutta vitun [**mint performance**](https://lovelace.oulu.fi/answers/jaarela22@oulu.fi/tietokonej%C3%A4rjestelm%C3%A4t/tietokonej%C3%A4rjestelm%C3%A4t/tkj-y86-fibonacci/2038103/) niin aivan vitun sama._
+_Mutta vitun [**mint performance**](https://raw.githack.com/Jan-Aarela/Fibonacci-y86/refs/heads/main/Test%20results.html) niin aivan vitun sama._
 
 _/kaljaa033_
 
