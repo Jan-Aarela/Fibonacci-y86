@@ -41,9 +41,11 @@ process:
     call multiplier         # Calculates square.
 
     rrmovq %r10, %r8
-    irmovq $5, %r9
-    call multiplier         # Multiplies square by 5.
-
+    addq %r8, %r10
+    addq %r8, %r10          # Effectivlely multiplies square by 5.
+    addq %r8, %r10          
+    addq %r8, %r10
+    
     irmovq $4, %r14         # 4 additor.
     addq %r14, %r10         
     call squareroot         # Calculates root(square + 4).
@@ -55,15 +57,15 @@ process:
 
     mrmovq (%r11), %rax     # Moves non-finonacci number into %rax.
     jmp end                 # And ultimately quits the code.
-    
+
 
 # Calcualates value with peasant multiplication. 
 multiplier:
-    irmovq $0, %r10         # Output
-    irmovq $1, %rsi         # Bit checker
-    irmovq $1, %rdi         # Multiplier
-    irmovq $12, %rbx        # Non ideal string lenght.
-    irmovq $1, %rdx         # Subract from %rbx 
+    irmovq $0, %r10         # Output.
+    irmovq $1, %rsi         # Bit checker.
+    irmovq $1, %rdi         # Multiplier.
+    irmovq $10, %rbx        # Lenght for values between 0 - 1023.
+    irmovq $1, %rdx         # Subract from %rbx.
     
     addition:
         andq %r9, %rsi      # Checks multiplier's boolean value.
@@ -73,14 +75,14 @@ multiplier:
         jmp shift           
         
     shift:
-        addq %rdi, %rdi     # Doubles the multiplier, effectivly making a bitshift.
-        rrmovq %rdi, %rsi
-        addq %r8, %r8       # Doubles the 
-        
         subq %rdx, %rbx     # Reduces remaining multiplication count by 1.
-        je endmul           # If count is 0, multiplication ends
+        je endmul           # If count is 0, multiplication ends.
         
-        jmp addition        # If count > 0, continues multiplication 
+        addq %rdi, %rdi     # Doubles the multiplier, effectivly making a bitshift.
+        rrmovq %rdi, %rsi   # Copies value for bit shifter.
+        addq %r8, %r8       # Doubles the multiplicant.
+        
+        jmp addition        # If count > 0, continues multiplication.
     
     endmul:
         ret                 # Returns back to process.
