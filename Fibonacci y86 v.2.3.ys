@@ -53,7 +53,8 @@ process:
     subq %r14, %r10         
     call squareroot         # Calculates root(square - 4).
 
-    jmp notfibonacci        # If conditions are not met, number is not a fibonacci.
+    mrmovq (%r11), %rax     # Moves non-finonacci number into %rax.
+    jmp end                 # And ultimately quits the code.
     
 
 # Calcualates value with peasant multiplication. 
@@ -106,7 +107,7 @@ squareroot:
         
         subq %r13, %r12
         subq %r13, %r12
-        je notperfsquare    # If sqaured root > comparison value and multiplier = 0, number is not perfect square.
+        je notperfsquare    # If sqaured root > comparison value and next multiplier = 2, number is not perfect square.
         jg halfroot         # If squared root > comparison value, starts reducing exponent.
         
     rootup:
@@ -151,12 +152,6 @@ squareroot:
     notperfsquare:
         ret                 # Returns back to process.
 
-
-# Moves value from an array if the number is not a fibonacci number.
-notfibonacci: 
-    mrmovq (%r11), %rax     # Moves non-finonacci number into %rax.
-    jmp end                 # And ultimately quits the code.
-
     
 # Quitting.    
 end:
@@ -164,6 +159,6 @@ end:
 
 .pos 0x700
 stack:
-    
+
 .pos 0x700
 array:
