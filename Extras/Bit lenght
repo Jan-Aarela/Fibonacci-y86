@@ -1,0 +1,27 @@
+# https://boginw.github.io/js-y86-64/
+
+irmovq $11, %rcx
+
+lenght:
+    rrmovq %rcx, %rbx       # Comparison value.
+    irmovq $1, %r8          # Lenght count.
+    irmovq $1, %r9          # Adder.
+    irmovq $2, %r10         # Current max value.
+    irmovq $1, %r12         # Curent max value -1.
+    
+    loop:
+        subq %r12, %rbx    
+        jle endlenght
+        
+        addq %r10, %r10
+        rrmovq %r10, %r12
+        subq %r9, %r12
+        
+        addq %r9, %r8
+        
+        rrmovq %rcx, %rbx
+        jmp loop
+    
+    endlenght:
+        halt
+        
