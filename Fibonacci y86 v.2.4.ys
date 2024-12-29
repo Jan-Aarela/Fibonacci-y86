@@ -36,16 +36,17 @@ start:
 # Starts processing the number.
 # Using formula 5*x^2+-4 == (int sqrt(5*x^2+-4))^2.
 process:
+    
     rrmovq %rcx, %r8        # Sets multiplicant & multiplier (%r8 & %r9)
     rrmovq %rcx, %r9
     call multiplier         # Calculates square.
-
+    
     rrmovq %r10, %r8
     addq %r8, %r10
     addq %r8, %r10          # Effectivlely multiplies square by 5.
     addq %r8, %r10          
     addq %r8, %r10
-    
+ 
     irmovq $4, %r14         # 4 additor.
     addq %r14, %r10         
     call squareroot         # Calculates root(square + 4).
@@ -64,15 +65,13 @@ multiplier:
     irmovq $0, %r10         # Output.
     irmovq $1, %rsi         # Bit checker.
     irmovq $1, %rdi         # Multiplier.
-    irmovq $10, %rbx        # Lenght for values between 0 - 1023.
+    irmovq 10, %rbx         # Lenght for values between 0 - 1023.
     irmovq $1, %rdx         # Subract from %rbx.
     
     addition:
         andq %r9, %rsi      # Checks multiplier's boolean value.
         je shift            # If equals 0, skips additon.
         addq %r8, %r10      # Adds n * %r8 to %r10. 
-        
-        jmp shift           
         
     shift:
         subq %rdx, %rbx     # Reduces remaining multiplication count by 1.
@@ -109,8 +108,9 @@ squareroot:
         
         subq %r13, %r12
         subq %r13, %r12
-        je notperfsquare    # If sqaured root > comparison value and next multiplier = 2, number is not perfect square.
         jg halfroot         # If squared root > comparison value, starts reducing exponent.
+        ret                 # If sqaured root > comparison value and next multiplier = 2, number is not perfect square.
+        
         
     rootup:
         rrmovq %rsi, %rdi   # Saves previous root.
@@ -150,9 +150,6 @@ squareroot:
         irmovq $1, %rcx     # Resets exponent value.
         
         jmp checker
-    
-    notperfsquare:
-        ret                 # Returns back to process.
 
     
 # Quitting.    
@@ -164,3 +161,4 @@ stack:
 
 .pos 0x700
 array:
+
