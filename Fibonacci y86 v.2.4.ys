@@ -3,17 +3,16 @@
 
 .pos 0
     irmovq array,%r11
-    irmovq $233,%r12
+    irmovq $987,%r12
     rmmovq %r12,(%r11)
     irmovq $987,%r12
     rmmovq %r12,8(%r11)
     irmovq $233,%r12        # Example input numbers to be determided if fibonacci.
     rmmovq %r12,16(%r11)    # For larger numbers, increase string lenght in multiplication parameters.
-    irmovq $1023,%r12       
+    irmovq 1023,%r12        # Largest fibonacci supported if len 64 is 701408733.
     rmmovq %r12,24(%r11)
     irmovq $0,%r12
     rmmovq %r12,32(%r11)
-
 
 main:
     irmovq stack, %rsp      # Initializes stack.
@@ -42,10 +41,9 @@ process:
     call multiplier         # Calculates square.
     
     rrmovq %r10, %r8
-    addq %r8, %r10
-    addq %r8, %r10          # Effectivlely multiplies square by 5.
+    addq %r10, %r10         # 2^2 * %r10 + %r10.
+    addq %r10, %r10         # Effectivlely multiplies square by 5.
     addq %r8, %r10          
-    addq %r8, %r10
  
     irmovq $4, %r14         # 4 additor.
     addq %r14, %r10         
